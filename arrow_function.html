@@ -1,0 +1,129 @@
+<html>
+    <script>
+    function add(x,y)
+     { 
+    return x+y;
+           } 
+console.log(add(2,3));
+
+
+
+
+// const add = (x,y) => x+y; 
+// console.log(add(2,10));
+
+
+//single argument
+// const sum = (x) => x+3; 
+// console.log(sum(10));
+
+
+// //multiple arugument
+// const sum = (x,y) =>
+// { 
+// return  x+y; 
+
+// } 
+// console.log(sum(10,5));
+
+
+
+//return object from arrow function {} === ()--> expression
+
+// const getuser = () => 
+//  ({name: 'CVR', city: 'Hyd'})
+// console.log(getuser());
+
+
+
+
+//this in arrow function
+
+// function addToCart(){
+//     //binding  properties
+//     this.productName = 'Laptop';
+
+//     //to return this product so create function
+//     this.getProduct = function(){
+
+//         setTimeout(function(){
+//             console.log(this.productName)
+//         },1000);
+//     }
+//  }
+// let obj = new addToCart();
+// obj.getProduct();
+
+
+
+
+
+// function addToCart(){
+//     //binding  properties
+//     this.productName = 'Laptop';
+
+//     //to return this product so create function
+//     this.getProduct = function(){
+//       console.log(this); 
+//         setTimeout(function()          
+//         {
+//             console.log(this); //javascript default object is window // normal function which is pointing to function
+//             console.log(this.productName) //normal function  is pointing to global obj i.e, LAPTOP
+//         },1000);
+//     }
+// }
+// let obj = new addToCart();
+// obj.getProduct();
+
+
+
+
+
+// function addToCart(){
+//     //binding  properties
+//     this.productName = 'Laptop';
+
+//     //to return this product so create function
+//     this.getProduct = function(){
+//       console.log(this); 
+//       const that = this;
+//         setTimeout(function()          
+//         {
+//             console.log(that); //javascript default object is window // normal function which is pointing to function
+//             console.log(that.productName) //normal function  is pointing to global obj i.e, LAPTOP
+//         },1000);
+//     }
+// }
+// let obj = new addToCart();
+// obj.getProduct();
+
+
+
+
+//arrow function
+
+// function addToCart(){
+//     //binding  properties
+//     this.productName = 'Laptop';
+
+//     //to return this product so create function
+//     this.getProduct = function(){
+//       console.log(this); 
+      
+//         setTimeout(() =>   
+//         {
+//            console.log(this.productName)
+//         },2000);
+//     }
+// }
+// let obj = new addToCart();
+// obj.getProduct();
+
+    </script>
+
+
+    <body>
+        <h1>ARROW FUNCTIONS EXAMPLES</h1>
+
+    </body>
+</html>
