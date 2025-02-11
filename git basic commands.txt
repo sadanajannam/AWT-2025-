@@ -1,0 +1,101 @@
+Git –version
+git config --global user.name "sadhanajannam"
+$ git config --global user.email "j.sadana@cvr.ac.in"
+$ git config --global user.name
+$ whoami
+Pwd
+cd .. 
+mkdir gitproject
+cd gitproject
+
+$ git branch -m master main
+git push -u origin main
+git push origin --delete master
+git branch
+
+
+
+git init
+echo "sample hello text" > test.txt
+git add test.txt
+git add .
+git commit - m "first changes done"
+git remote add orgin git-url(new repo url paste)
+git push  origin master
+git remote -v
+git push --set-upstream origin master
+git add .
+git commit -m "second chages done"
+git push
+
+
+
+git config --global http.proxy http://172.16.60.250:3128
+git config --global https.proxy http://172.16.60.250:3128
+
+
+
+
+REMOTE TO LOCAL
+
+
+git clone url
+git status
+git add .
+git commit -m "first change"
+git push
+
+
+git status
+git push
+git commit -m "second change"
+
+
+
+
+
+
+
+
+Ls
+Ls -l
+Ls -al
+Clear
+Pwd
+Cd desktop
+Mkdir git project1
+Cd project1
+Pwd
+Git init
+Ls
+Touch index.html
+Touch styles.css
+Touch script.js
+Ls
+Git status
+Echo “practicing first git” > file.txt
+Explorer // Now open the file to see the changes
+clear
+Ls
+Git status
+Git add file.txt
+Git commit -m “adding initial changes”
+Git status
+
+git log
+
+git branch branch_name
+
+git checkout
+
+git merge branch_name(old)
+
+git log
+
+git diff
+
+git remote -v
+
+git remote add [name] [url]
+
+
