@@ -1,0 +1,95 @@
+npm init --yes
+
+npm install express dotenv
+
+create a new file called index.js
+
+const express = require('express');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT;
+
+app.get('/', (req, res) => {
+  res.send('Express + TypeScript Server');
+});
+
+app.listen(port, () => {
+  console.log(`[server]: Server is running at http://localhost:${port}`);
+});
+
+create .env file and add the environment variable
+ for PORT=8000.
+
+node index.js ---- server is running now
+
+Installing TypeScript
+npm i -D typescript @types/express @types/node
+
+For Generating tsconfig.json
+
+npx tsc --init
+
+By default, the value of this option is set 
+to the root directory. Change it to dist:
+
+{
+  "compilerOptions": {
+    "outDir": "./dist"
+
+    // rest options remain same
+  }
+}
+
+Create an Express server with a .ts extension
+Now, you can easily convert the minimal server
+ code in index.js to an index.ts file.
+
+Open the index.ts file and modify it, as 
+shown below:
+
+import express, { Express, Request, Response } from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const app: Express = express();
+const port = process.env.PORT;
+
+app.get('/', (req: Request, res: Response) => {
+  res.send('Express + TypeScript Server');
+});
+
+app.listen(port, () => {
+  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+});
+
+npm install -D concurrently nodemon
+
+
+{
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q 
+    dist/index.js\""
+  }
+}
+
+
+
+// To compile the code, you need to run the command----  
+npm run build
+
+//npm run dev ---------to trigger the development server
+
+There are no errors, indicating that the server is successfully running. 
+You can go to the browser window to see the result.
+
+If you specify any other directory as the value of the property outDir in the tsconfig.json
+ file, that directory would be reflected here instead of dist.
+
+
+

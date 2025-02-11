@@ -1,0 +1,213 @@
+npm init -y
+
+create server.js 
+
+console.log('hello')
+
+node server.js
+
+in package.json , add  "serve": "node server.js" in scripts
+
+
+
+and run in terminal npm run serve
+
+npm i express
+
+in server.js
+
+const express = require('express')
+const app = express()
+
+app.listen(5501, ()=> {
+    console.log('api running with port 5501')
+})
+
+npm run serve
+
+const express = require('express')
+const app = express()
+
+
+//routes to access in browser
+app.get('/', (req,res) => {
+    res.send('hello node api')
+})
+
+
+app.listen(5501, ()=> {
+    console.log('api running with port 5501')
+})
+
+npm run serve
+
+can see the output
+
+in terminal, type git init
+
+create .gitignore file and write node_modules
+
+in terminal,type git add.
+
+in terminal, git commit -m "inital project"
+
+const express = require('express')
+const app = express()
+
+
+//routes to access in browser
+app.get('/', (req,res) => {
+    res.send('hello node api')
+})
+
+app.get('/blog', (req,res) => {
+    res.send('hello blog')
+})
+
+
+app.listen(5501, ()=> {
+    console.log('api running with port 5501')
+})
+
+go to postman , send http://localhost:5501/blog
+above will not work as we have not installed nodemon
+
+install nodemon as follows
+
+npm install nodemon -D   
+
+add "dev": "nodemon server.js" in package.json
+
+in terminal, npm run dev
+
+go to postman , send http://localhost:5501/blog
+
+in server.js file do the changes, the nodemon will restart every time automatically
+
+  res.send('hello blog , welcome to api ')
+
+Connect ur api to mongodb
+
+npm i mongoose
+
+npm run dev
+
+
+
+
+in browser type mongodb
+sign in with google account
+
+click on shared--- aws ---location(asia) ----create cluster
+
+create a database user
+username  ---  admin
+password -- admin
+
+create database user
+
+go to database --- choose a connect method -- connect your application
+
+copy the code mongodb+srv://admin:<password>@cluster0.zntp8y6.mongodb.net/?retryWrites=true&w=majority
+go to server.js
+
+add this connection code
+
+mongoose.connect('mongodb+srv://admin:admin@cluster0.zntp8y6.mongodb.net/emp?retryWrites=true&w=majority')
+.then(()=>
+{
+     console.log('connected sucess')
+    app.listen(5501, ()=> {
+    console.log('api running with port 5501')
+})
+   
+}).catch((error) => {
+    console.log(error)
+})
+
+// creating models 
+
+create new folder name it as models
+inside folder create a file and name it as productModel.js
+
+const mongoose = require('mongoose')
+
+const productSchema = mongoose.Schema(
+    {
+    name: {
+        type: String,
+        required: [true, "Please enter a product name"]
+    },
+    quantity: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    image: {
+        type: String,
+        required: false,
+    }
+},
+{
+    timestamps: true
+}
+)
+const Product = mongoose.model('Product', productSchema);
+module.exports = Product;
+
+
+
+in server.js file
+
+//model to connect with mongodb 
+app.post('/product', (req, res) => {
+    console.locahost(res.body)
+    res.send(res.body)
+})
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+create folder in VS Code
+
+In terminal type npm init
+
+npm i express mongoose (it is a depenceny)
+
+npm i  --save--dev dotenv nodemon
+
+in package.json file,  
+ 
+in scripts change "test": "echo \" error" && exit 1" to --->   "devStart": "nodemon server.js"
+
+create new file and name it as server.js
+
+create .env file
+
+create .gitignore file ---- go to .gitignore and type the following
+
+.env
+node_modules
+
+go to server.js
+
+
+
+
+
